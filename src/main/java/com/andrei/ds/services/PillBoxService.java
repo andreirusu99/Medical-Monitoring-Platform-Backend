@@ -31,6 +31,7 @@ public class PillBoxService extends PillBoxServiceGrpc.PillBoxServiceImplBase {
             MedicationTakenRequest request,
             StreamObserver<MedicationTakenResponse> responseObserver
     ) {
+        LOGGER.info("Patient {} has taken {}", request.getPatientId(), request.getDrugName());
         MedicationTakenResponse response = MedicationTakenResponse.newBuilder()
                 .setPatientId(request.getPatientId())
                 .setDrugName(request.getDrugName())
@@ -44,6 +45,7 @@ public class PillBoxService extends PillBoxServiceGrpc.PillBoxServiceImplBase {
     public void registerMedsNotTaken(
             MedicationNotTakenRequest request,
             StreamObserver<MedicationNotTakenResponse> responseObserver) {
+        LOGGER.info("Patient {} has NOT taken {}", request.getPatientId(), request.getDrugName());
         MedicationNotTakenResponse response = MedicationNotTakenResponse.newBuilder()
                 .setPatientId(request.getPatientId())
                 .setDrugName(request.getDrugName())
@@ -76,7 +78,7 @@ public class PillBoxService extends PillBoxServiceGrpc.PillBoxServiceImplBase {
             }
         });
 
-        LOGGER.info("Patient {} has {} active treatments", request.getPatientId(), activeTreatments.size());
+        LOGGER.info("Patient {} has {} active treatment/s", request.getPatientId(), activeTreatments.size());
 
         MedicationPlanResponse.Builder responseBuilder = MedicationPlanResponse.newBuilder()
                 .setPatientId(request.getPatientId());

@@ -1,4 +1,4 @@
-package com.andrei.ds.monitoring;
+package com.andrei.ds.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
