@@ -1,7 +1,7 @@
-## DS 2020
-##### Laboratory Project Spring Server Application
+## Medical Monitoring Platform
+##### Spring Server Application
 
-By Andrei Rusu, 30441
+By Andrei Rusu
 
 Build an image using the Dockerfile:
 `docker build -t spring-app . `
