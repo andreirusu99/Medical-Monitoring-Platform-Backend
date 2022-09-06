@@ -30,3 +30,7 @@
 
 ![Step 3 Architecture](DS3_arch.png)
 ![Step 3 Deployment](DS3_deploy.png)
+
+#### Design Patterns Used
+- Builder: gRPC response building
+- Factory: creating the logger
